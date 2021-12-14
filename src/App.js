@@ -1,15 +1,16 @@
 import './App.css';
-import Homepage from "./components/homepage/homepage"
+// import Homepage from "./components/homepage/homepage"
 import Login from "./components/login/login"
 import Register from "./components/register/register"
 import Forgot from "./components/forgot/forgot"
 // import Teacher from './components/teacher/teacher';
 // import Student from './components/student/student';
+import Student from './components/student/student';
+import Teacher from './components/teacher/teacher';
+import Teacherlogin from './components/teacherlogin/teacherlogin';
 import { BrowserRouter as Routes,Route } from "react-router-dom";
 
 
-import Student from './components/student/student';
-import Teacher from './components/teacher/teacher';
 import { useState } from 'react';
 
 
@@ -19,9 +20,14 @@ function App() {
   return (
     <div className="App">
       <Routes>
-          <Route exact path="/">
+          <Route exact path="/student">
             {
-              user && user._id ? <Homepage setLoginUser={setLoginUser} /> : <Login setLoginUser={setLoginUser}/>
+              user && user._id ? <Student setLoginUser={setLoginUser} /> : <Login setLoginUser={setLoginUser}/>
+            }
+          </Route>
+          <Route exact path="/teacher">
+            {
+              user && user._id ? <Teacher setLoginUser={setLoginUser} /> : <Teacherlogin setLoginUser={setLoginUser}/>
             }
           </Route>
           <Route path="/login">
@@ -33,12 +39,19 @@ function App() {
           <Route exact path="/forgot">
             <Forgot />
           </Route>
-           <Route exact path="/student">
-            <Student />
+          <Route path="/teacherlogin">
+            <Teacherlogin setLoginUser={setLoginUser}/>
           </Route>
-          <Route exact path="/teacher">
-            <Teacher />
-          </Route> 
+           {/* <Route exact path="/student">
+            <Student />
+          </Route> */}
+          {/* <Route exact path="/teacher"> */}
+            {/* <Teacherlogin setLoginUser={setLoginUser}/>
+            <div className="Loginteacher">
+            <button onclick={window.alert['validate']}>Login as Teacher</button>
+        </div> */}
+        {/* <Teacherlogin/>
+          </Route>  */}
       </Routes> 
     </div>
   );

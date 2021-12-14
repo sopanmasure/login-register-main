@@ -1,15 +1,11 @@
 import React from "react"
 import "./student.css"
-// import Login from "../login/login"
-import { useHistory } from 'react-router-dom';
 
-const Student = () => {
-    const history = useHistory();
+const Student = ({setLoginUser}) => {
     return (
-        
         <div className="homepage">
-            <h1>Hello Studnet</h1>
-            <div className="button" onClick={() => history.push("/login")}>Logout</div>
+            <h1>Hello Student</h1>
+            <div className="button" onClick={() => setLoginUser({})} >Logout</div>
         </div>
     )
 }

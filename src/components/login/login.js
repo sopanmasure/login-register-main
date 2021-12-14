@@ -21,19 +21,15 @@ const Login = ({ setLoginUser}) => {
     }
 
     const login = () => {
-   axios.post("http://localhost:9002/login", user)
+        axios.post("http://localhost:9002/login", user)
         .then(res => {
-            // alert("alert")
+            alert(res.data.message)
             setLoginUser(res.data.user)
-            if(user.email="manali@gmail.com" && user.password ==="123")
-         {
-             history.push("/teacher")
-         }
-          else { 
-            history.push("/student")}
-          
+            history.push("/student")
         })
     }
+
+    
     const forgot = ()=>{
         history.push("/forgot")
     }
@@ -47,6 +43,7 @@ const Login = ({ setLoginUser}) => {
             <div className="forgotbutton" onClick={forgot}>Forgot Password</div>
             <div>or</div>
             <div className="button" onClick={() => history.push("/register")}>Register</div>
+            <div className="button" onClick={()=>history.push("/teacherlogin")}>Login as Teacher</div>
         </div>
     )
 }

@@ -46,7 +46,6 @@ const Register = () => {
             <input type="text" name="name" value={user.name} placeholder="Enter your Name" onChange={ handleChange }></input>
             <input type="number" name="prn" value={user.prn} placeholder="Enter your prn" onChange={ handleChange }></input>
             <input type="number" name="year" value={user.year} placeholder="Your year" onChange={ handleChange }></input>
-            <input type="number" name="semister" value={user.year} placeholder="Your Semister" onChange={ handleChange }></input>
             <input type="text" name="batch" value={user.batch} placeholder="Enter your batch" onChange={ handleChange }></input>
             <input type="text" name="email" value={user.email} placeholder="Your Email" onChange={ handleChange }></input>
             <input type="password" name="password" value={user.password} placeholder="Your Password" onChange={ handleChange }></input>
